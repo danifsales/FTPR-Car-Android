@@ -1,8 +1,13 @@
-package com.example.myapitest
+package com.dani.ftprcar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapitest.databinding.ActivityMainBinding
+import com.dani.ftprcar.databinding.ActivityMainBinding
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.*
+import com.dani.ftprcar.auth.AuthViewModel
+import com.dani.ftprcar.data.Car
+import com.dani.ftprcar.ui.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +33,31 @@ class MainActivity : AppCompatActivity() {
         //      { "id": "001", "imageUrl":"https://image", "year":"2020/2020", "name":"Gaspar", "licence":"ABC-1234", "place": {"lat": 0, "long": 0} }
 
         // Opcionalmente trabalhar com o Google Maps ara enviar o place
+
+        setContent {
+            val authVm = remember { AuthViewModel() }
+            val listVm = remember { CarListViewModel() }
+            val formVm = remember { CarFormViewModel() }
+            var screen by remember { mutableStateOf("list") }
+            var mapCar by remember { mutableStateOf<Car?>(null) }
+
+            val uid by authVm.uid.collectAsState()
+
+            if (uid == null) {
+                LoginScreen(authVm) { screen = "list"; listVm.load() }
+            } else {
+                when {
+                    mapCar != null -> MapScreen(mapCar!!) { mapCar = null; screen = "list" }
+                    screen == "form" -> CarFormScreen(formVm) {
+                        screen = "list"; listVm.load()
+                    }
+                    else -> { listVm.load(); CarListScreen(listVm, authVm, onNew = { screen = "form" }, onMap = { mapCar = it }) }
+                }
+            }
+        }
     }
+
+}
 
     override fun onResume() {
         super.onResume()

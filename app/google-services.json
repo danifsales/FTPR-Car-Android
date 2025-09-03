@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426189392545",
+    "project_id": "dani-utfpr-car",
+    "storage_bucket": "dani-utfpr-car.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426189392545:android:65ca1ffdb3cf8590597ee0",
+        "android_client_info": {
+          "package_name": "com.dani.ftprcar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDSk8hHOe9OcrTzlU3zu2nP4NFlBUc26c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
