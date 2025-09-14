@@ -1,35 +1,3 @@
 <resources>
-    <string name="app_name">MyApi_Dani_Sales</string>
-
-    <string name="default_web_client_id">604101729261-34q64p6p6l3ia9e1b8o9i505tkg09v38.apps.googleusercontent.com</string>
-
-    <string name="could_not_retrieve_vehicle_data">Could_not\n</string>
-    <string name="erro_nao_conhecido">Erro não conhecido</string>
-    <string name="login">Login</string>
-    <string name="_55_11_89324_6587">+55 11 91234-5678</string>
-    <string name="unknown_error">Erro desconhecido!</string>
-    <string name="code_brazil">+55</string>
-    <string name="send_sms">ENVIAR SMS</string>
-    <string name="hint_verify_sms">123456</string>
-    <string name="verify_sms">VERIFICAR SMS</string>
-    <string name="google_sign_in_">GOOGLE SIGN IN</string>
-    <string name="logout">Logout</string>
-    <string name="salvar">Salvar</string>
-    <string name="error_validate_form">Preencha o campo: %1$s</string>
-    <string name="error_validate_take_picture">Tire uma foto!</string>
-    <string name="model">Model:</string>
-    <string name="year">Year:</string>
-    <string name="license">License:</string>
-    <string name="image_url">Image Url</string>
-    <string name="error_create">Erro ao criar carro!</string>
-    <string name="success_create">Carro %1$s criado com sucesso!</string>
-    <string name="modelo_do_carro">Modelo do carro</string>
-    <string name="ano_de_fabrica_o">Ano de fabricação:</string>
-    <string name="success_update">Carro atualizado com sucesso!</string>
-    <string name="succes_delete">Carro deletado com sucesso!</string>
-    <string name="car_year" formatted="false">2020/2020</string>
-
-    <!-- Botões usados na tela de detalhes -->
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
+    <string name="app_name">UTFPRCAR</string>
 </resources>

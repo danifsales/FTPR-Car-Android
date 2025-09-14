@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "367148793906",
-    "project_id": "myapitest-3a49f",
-    "storage_bucket": "myapitest-3a49f.firebasestorage.app"
+    "project_number": "426189392545",
+    "project_id": "dani-utfpr-car",
+    "storage_bucket": "dani-utfpr-car.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:367148793906:android:35b321ff763133ca1dfc2b",
+        "mobilesdk_app_id": "1:426189392545:android:65ca1ffdb3cf8590597ee0",
         "android_client_info": {
-          "package_name": "com.example.myapitest"
+          "package_name": "com.dani.ftprcar"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBn_18WnRc-dveQdfXFvPzAE4v0_dX6xgI"
+          "current_key": "AIzaSyCDSk8hHOe9OcrTzlU3zu2nP4NFlBUc26c"
         }
       ],
       "services": {
