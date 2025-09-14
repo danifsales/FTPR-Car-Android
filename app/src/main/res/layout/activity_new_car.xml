@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCarActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:title="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Nome/Modelo -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlCreateName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCreateName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/model" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Ano -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlCreateYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tlCreateName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCreateYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/year" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Placa -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlCreateLicense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tlCreateYear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCreateLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/license" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo para mostrar status da imagem (preenchido no retorno da câmera) -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/imageUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/image_url"
+        app:layout_constraintTop_toBottomOf="@id/tlCreateLicense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Conteúdo do mapa -->
+    <LinearLayout
+        android:id="@+id/mapContent"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/imageUrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!-- Progress do upload -->
+    <ProgressBar
+        android:id="@+id/loadImageProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/mapContent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp" />
+
+    <!-- Botão Tirar Foto -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/takePictureCta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tirar foto"
+        app:layout_constraintTop_toBottomOf="@id/mapContent"
+        app:layout_constraintStart_toEndOf="@id/loadImageProgress"
+        app:layout_constraintEnd_toStartOf="@id/saveCta"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botão Salvar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveCta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar"
+        app:layout_constraintTop_toBottomOf="@id/mapContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/takePictureCta"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,10 +26,11 @@
                 android:id="@+id/addCta"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
+                android:src="@android:drawable/ic_menu_add"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@android:drawable/ic_menu_add" />
+                app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
