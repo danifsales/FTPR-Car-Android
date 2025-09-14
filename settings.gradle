@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ftprcar"
-include(':app')
+rootProject.name = "MyApiTest"
+include ':app'
